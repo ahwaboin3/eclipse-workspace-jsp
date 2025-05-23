@@ -1,0 +1,9 @@
+package servlet;
+
+import jakarta.servlet.http.HttpServlet;
+
+//서블릿이란?
+//
+public class HelloServlet extends HttpServlet{
+
+}

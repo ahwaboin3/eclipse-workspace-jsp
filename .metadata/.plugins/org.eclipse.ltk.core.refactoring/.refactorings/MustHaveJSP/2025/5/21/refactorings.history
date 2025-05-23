@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;HelloJSP.jsp, PageContextMain.jsp, RequestMain.jsp, RequestWebInfo.jsp&apos; to &apos;model1&apos;" description="Move 4 resources to &apos;model1&apos;" destination="src/main/webapp/model1" element1="src/main/webapp/HelloJSP.jsp" element2="src/main/webapp/PageContextMain.jsp" element3="src/main/webapp/RequestMain.jsp" element4="src/main/webapp/RequestWebInfo.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="4" stamp="1747807432264" updateReferences="true"/>
+</session>

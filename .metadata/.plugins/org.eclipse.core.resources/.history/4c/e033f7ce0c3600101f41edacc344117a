@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>webapp/JSTL/Set1.jsp</title>
+</head>
+<body>
+<!-- JSTL 
+JSTL은 JSP에서 빈번하게 사용되는 조건문, 반복문 등을 처리해주는 태그를
+모아 표준으로 만들어 놓은 라이브러리입니다.
+-->
+</body>
+</html>
+
+
+
+

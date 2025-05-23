@@ -1,0 +1,12 @@
+package servlet;
+
+import jakarta.servlet.http.HttpServlet;
+
+//서블릿이란?
+//서블릿은 서버 단에서 클라이언트의 요청을 받아 처리한 후 응답하는 역활을 합니다.
+//MVC(model - 데이터와 관련된 부분
+//v - view - 사용자가 GUI로 보여지는 부분
+//control - 모델과 뷰를 컨트롤 하는 부분
+public class HelloServlet extends HttpServlet{
+
+}
