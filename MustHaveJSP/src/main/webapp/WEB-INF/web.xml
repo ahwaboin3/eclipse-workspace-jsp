@@ -19,6 +19,23 @@
   	<servlet-name>HelloServlet</servlet-name>
   	<url-pattern>/h</url-pattern>
   </servlet-mapping>
+ <!-- DB 접속 정보 등록 매개변수로 등록 194p-->
+  <context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleUrl</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1522/xe</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleId</param-name>
+  	<param-value>musthave</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OraclePwd</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
 </web-app>
 
 
