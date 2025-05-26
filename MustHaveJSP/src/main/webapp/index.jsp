@@ -13,7 +13,10 @@
 	<div>
 		<a href="./h">HelloServlet으로 요청 보내기</a>
 	</div>
-	
+	<div>
+		<p>${message}</p>
+		<p><%=request.getAttribute("message") %></p>
+	</div>
 	
 </body>
 </html>

@@ -25,7 +25,8 @@ public class HelloServlet extends HttpServlet{
 			HttpServletResponse resp) 
 					throws ServletException, IOException {
 		System.out.println("HelloSerblet doGet 메소드 호출됨");
-		req.getRequestDispatcher("/JSTL/Choose.jsp")
+		req.setAttribute("message", "Hello Servlet...!!");
+		req.getRequestDispatcher("/")
 			.forward(req, resp);
 	}
 	
