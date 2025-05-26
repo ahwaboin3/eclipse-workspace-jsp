@@ -36,16 +36,16 @@ public class JDBCCP {
 	
 	private PreparedStatement ps;
 	
-	//회원 추가 쿼리문
+	//회원 추가 동적 쿼리문
 	public void exeUpdate(String id,String pass,
 			String name) {
 		String sql="insert into member(id, pass, name)"
 				+ "values(?,?,?)";
 		try {
 			ps=con.prepareStatement(sql);
-			ps.setString(0, id);
-			ps.setString(1, pass);
-			ps.setString(2, name);
+			ps.setString(1, id);
+			ps.setString(2, pass);
+			ps.setString(3, name);
 			int inResult=ps.executeUpdate();
 			System.out.println(inResult+"행이 입력되었습니다.");
 		} catch (SQLException e) {

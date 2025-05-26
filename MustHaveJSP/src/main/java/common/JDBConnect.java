@@ -7,6 +7,10 @@ import java.sql.SQLException;
 public class JDBConnect {
 	private Connection con;
 
+	public Connection getCon() {
+		return con;
+	}
+	
 	public JDBConnect() {
 		try {
 			//JDBC 드라이버 로드
