@@ -22,7 +22,6 @@
 	${number }는 짝수입니다.<br/>
 </c:if>
 result: ${result }</br>
-${"string".equals("str") }
 </body>
 </html>
 
