@@ -9,6 +9,9 @@
 </head>
 <body>
 	<h2>로그인 페이지</h2>
+	<%
+		if(session.getAttribute("UserId")==null){
+	%>
 	<form action="../login" method="post">
 		<div>
 			아이디:<input type="text" name="userId" 
@@ -22,6 +25,10 @@
 			<input type="submit" value="로그인" id="sumBtn"/>
 		</div>
 	</form>
+	<%}else{ %>
+		<p><%=session.getAttribute("UserName") %> 
+		회원님 로그인하셨습니다.</p>
+	<%} %>
 	<script type="text/javascript">
 		const sumBtn=document.querySelector("#sumBtn");
 		const userId=document.querySelector("#userId");

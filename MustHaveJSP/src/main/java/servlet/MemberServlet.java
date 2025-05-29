@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class MemberServlet extends HttpServlet {
@@ -22,12 +23,15 @@ public class MemberServlet extends HttpServlet {
 		//로그인 성공 여부에 따른 처리
 		if(mdto.getId()!=null) {
 			//로그인 성공
-			System.out.println("로그인 성공");
-			System.out.println(mdto);
+			HttpSession session=req.getSession();
+			session.setAttribute("UserId", mdto.getId());
+			session.setAttribute("UserName", mdto.getName());
 		}else {
 			//로그인 실패
 			System.out.println("로그인 실패");
 		}
+		req.getRequestDispatcher("./06Session/LoginForm.jsp")
+			.forward(req, resp);
 	}
 	
 }
