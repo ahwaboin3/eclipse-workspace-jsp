@@ -7,7 +7,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
 
 public class FileUtil {
+	
 	//파일 업로드 처리
+	
 	public void uploadFile(
 			HttpServletRequest req,String sDirectory) 
 					throws IOException, ServletException {

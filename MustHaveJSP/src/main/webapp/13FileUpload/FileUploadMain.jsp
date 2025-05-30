@@ -23,6 +23,7 @@
 		method="post" enctype="multipart/form-data"
 		id="fileForm"
 	>
+	
 		<div>
 			제목:
 			<input type="text" name="title"/>

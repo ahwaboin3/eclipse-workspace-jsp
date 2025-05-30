@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import common.JDBConnect;
 
 public class MyFileDAO {
+	
 	//새로운 파일등록을 디비에 입력
 	public int insertFile(MyFileDTO mfdto) throws SQLException {
 		String query="insert into myfile("
