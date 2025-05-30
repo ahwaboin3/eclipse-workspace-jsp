@@ -28,7 +28,7 @@ public class MemberServlet extends HttpServlet {
 			session.setAttribute("UserName", mdto.getName());
 		}else {
 			//로그인 실패
-			System.out.println("로그인 실패");
+			req.setAttribute("LoginErrMsg", "로그인 오류입니다.");
 		}
 		req.getRequestDispatcher("./06Session/LoginForm.jsp")
 			.forward(req, resp);

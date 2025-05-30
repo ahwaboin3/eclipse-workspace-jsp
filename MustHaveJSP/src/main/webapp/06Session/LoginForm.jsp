@@ -6,9 +6,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!-- LoginForm.jsp -->
+<style type="text/css">
+	.errmsg{
+		color:red;
+		font-size: 0.8em;
+	}
+</style>
 </head>
 <body>
+	<%/*
+	액션 태그 <jsp:include>
+	page 속성 값으로 추가할 페이지의 주소
+	*/%>
+	<jsp:include page="../Common/Link.jsp"></jsp:include>
 	<h2>로그인 페이지</h2>
+	<p class="errmsg">
+		<%=request.getAttribute("LoginErrMsg")==null?
+				"":request.getAttribute("LoginErrMsg") %>
+	</p>
 	<%
 		if(session.getAttribute("UserId")==null){
 	%>
@@ -28,6 +43,9 @@
 	<%}else{ %>
 		<p><%=session.getAttribute("UserName") %> 
 		회원님 로그인하셨습니다.</p>
+		<div>
+			<a href="./logout">로그아웃</a>
+		</div>
 	<%} %>
 	<script type="text/javascript">
 		const sumBtn=document.querySelector("#sumBtn");
