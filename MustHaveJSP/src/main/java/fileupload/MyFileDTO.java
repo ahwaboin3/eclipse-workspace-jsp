@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class MyFileDTO {
 	
-	
 	private String idx;
 	private String title;
 	private String cate;
