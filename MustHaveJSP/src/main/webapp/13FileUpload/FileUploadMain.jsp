@@ -30,13 +30,13 @@
 		</div>
 		<div>
 			카테고리(선택사항):
-			<input type="checkbox" name="cate" 
+			<input type="radio" name="cate" 
 				value="사진" checked />사진
-			<input type="checkbox" name="cate" 
+			<input type="radio" name="cate" 
 				value="파일" />파일
-			<input type="checkbox" name="cate" 
-				value="워드" />동영상
-			<input type="checkbox" name="cate" 
+			<input type="radio" name="cate" 
+				value="동영상" />동영상
+			<input type="radio" name="cate" 
 				value="음원" />음원
 		</div>
 		<div>

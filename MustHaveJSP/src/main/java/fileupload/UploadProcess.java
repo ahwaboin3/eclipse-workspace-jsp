@@ -25,7 +25,20 @@ public class UploadProcess extends HttpServlet{
 		//저장할 폴더
 		String saveDirectory=
 				getServletContext().getRealPath("/Uploads");
-		mfs.saveFile(req, saveDirectory);
+		List<String> names=mfs.saveFile(req, saveDirectory);
+		//데이터 베이스에 정보 저장
+		mfs.insertMyFile(req, names);
+		//view로 리다이렉트
+		req.getRequestDispatcher("FileUploadMain.jsp")
+			.forward(req, resp);
 	}
 	
 }
+
+
+
+
+
+
+
+
