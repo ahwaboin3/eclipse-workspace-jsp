@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,6 +65,11 @@
 		<div>
 			<span id="errMsg"></span>
 		</div>
+		<c:if test="${errMsg!=null }">
+			<div>
+				<span>${errMsg }</span>
+			</div>
+		</c:if>
 		<div class="input-group d-md-flex justify-content-md-end">
 			<button type="reset" 
 				class="btn btn-outline-secondary" 

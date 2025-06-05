@@ -74,6 +74,36 @@ public class BoardDao implements BoardRepository{
 		jdbc.close();
 		return result;
 	}
+	
+	//idx값을 이용하여 해당 게시물 한개만 가져 오기
+	public BoardDto selectView(int idx) {
+		Jdbc jdbc=new Jdbc();
+		BoardDto bDto=new BoardDto();
+		String query=
+			"select * from mvcboard where idx=?";
+		try {
+			PreparedStatement ps=
+				jdbc.getCon().prepareStatement(query);
+			ps.setInt(1, idx);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				bDto.setIdx(rs.getInt(1));
+				bDto.setName(rs.getString(2));
+				bDto.setTitle(rs.getString(3));
+				bDto.setContent(rs.getString(4));
+				bDto.setPostdate(rs.getDate(5));
+				bDto.setOfile(rs.getString(6));
+				bDto.setSfile(rs.getString(7));
+				bDto.setDowncount(rs.getInt(8));
+				bDto.setPass(rs.getString(9));
+				bDto.setVisitcount(rs.getInt(10));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		jdbc.close();
+		return bDto;
+	}
 
 }
 

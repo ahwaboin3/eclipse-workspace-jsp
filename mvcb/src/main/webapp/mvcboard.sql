@@ -52,6 +52,9 @@ select * from board where title like '%제목1%';
 
 select * from mvcboard where title like '%제목2%' order by idx desc;
 
+-- idx를 이용하여 게시글 한개 가져오기
+select * from mvcboard where idx=10;
+
 
 
 

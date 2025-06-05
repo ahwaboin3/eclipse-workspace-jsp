@@ -37,11 +37,17 @@
 	  	<c:forEach items="${boards }" var="board">
 		    <tr>
 		      <th scope="row">${board.idx }</th>
-		      <td>${board.title }</td>
+		      <td>
+		      	<a href="./view.do?idx=${board.idx }"
+		      		class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+		      	>
+		      		${board.title }
+		      	</a>
+		      </td>
 		      <td>${board.name }</td>
 		      <td>${board.visitcount }</td>
 		      <td>${board.postdate }</td>
-		      <td></td>
+		      <td>${board.ofile }</td>
 		    </tr>
 	  	</c:forEach>
 	  </tbody>
