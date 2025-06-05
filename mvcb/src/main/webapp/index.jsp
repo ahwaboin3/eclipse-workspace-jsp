@@ -10,6 +10,18 @@
 </head>
 <body>
 	<h2>파일 첨부형 게시판 - 목록 보기</h2>
+	<div class="d-grid d-md-flex justify-content-md-end">
+		<a class="btn btn-outline-dark" 
+		href="./write.do" role="button">글쓰기</a>
+	</div>
+	<form method="get" action="./">
+		<div class="input-group flex-nowrap">
+			<span class="input-group-text" id="addon-wrapping">제목 검색</span>
+			<input name="searchTitle" 
+				type="text" class="form-control" placeholder="검색어 입력" aria-label="searchTitle" aria-describedby="addon-wrapping">
+			<input class="btn btn-outline-secondary" type="submit" id="button-addon2" value="검색"/>	
+		</div>
+	</form>
 	<table class="table table-striped">
 	  <thead>
 	    <tr>

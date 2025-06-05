@@ -40,9 +40,25 @@ values(seq_mvcboard_num.nextval,
 insert into mvcboard( idx, name, title, content, pass)
 values(seq_mvcboard_num.nextval,
     '문익점','자료실 제목6 입니다', '내용', '1234');
-
+insert into mvcboard( idx, name, title, content, pass)
+values(seq_mvcboard_num.nextval,
+    '세종대왕','자료실 제목7 입니다', '내용', '1234');
 select * from mvcboard;
 
 commit;
+
+-- 제목 검색 기능
+select * from board where title like '%제목1%';
+
+select * from mvcboard where title like '%제목2%' order by idx desc;
+
+
+
+
+
+
+
+
+
 
 

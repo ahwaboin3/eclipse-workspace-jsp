@@ -12,12 +12,18 @@ public class BoardDao implements BoardRepository{
 
 	//게시물 목록을 반환합니다(페이지 기능 지원)
 	@Override
-	public List<BoardDto> getBoards() {
+	public List<BoardDto> getBoards(String title) {
 		Jdbc jdbc=new Jdbc();
 		List<BoardDto> boards=new ArrayList<>();
 		//쿼리문 준비
 		String query=
 				"select * from mvcboard order by idx desc";
+		//제목 검색어가 있으면 다른 쿼리문으로 교체
+		if(title!=null) {
+			query="select * from mvcboard "
+					+ "where title like '%"+title+"%' "
+					+ "order by idx desc";
+		}
 		try {
 			PreparedStatement ps=
 				jdbc.getCon().prepareStatement(query);
@@ -43,8 +49,40 @@ public class BoardDao implements BoardRepository{
 		}
 		return boards;
 	}
+	
+	//게시글을 데이터베이스에 등록
+	public int insertWrite(BoardDto bDto) {
+		int result=0;
+		Jdbc jdbc=new Jdbc();
+		String query="insert into mvcboard("
+				+ "idx, name, title, content,ofile,sfile,pass) "
+				+ "values(seq_mvcboard_num.nextval,"
+				+ "?,?,?,?,?,?)";
+		try {
+			PreparedStatement ps=
+					jdbc.getCon().prepareStatement(query);
+			ps.setString(1, bDto.getName());
+			ps.setString(2, bDto.getTitle());
+			ps.setString(3, bDto.getContent());
+			ps.setString(4, bDto.getOfile());
+			ps.setString(5, bDto.getSfile());
+			ps.setString(6, bDto.getPass());
+			result=ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		jdbc.close();
+		return result;
+	}
 
 }
+
+
+
+
+
+
+
 
 
 
